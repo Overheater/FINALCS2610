@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+<div class="center">
+    <h3>Welcome to Kicks Calendars' Beta!</h3>
+    <p>Check out upcoming releases from the menu above, and add your own by clicking times</p>
+
+
+    <p>select one of the following companies to see past and upcoming releases:</p>
+    <ul id="belts">
+        <li><a id="NIKE"  href="{% url 'sneakers-event' "NIKE" %}">NIKE</a></li>
+        <li><a id="ADIDAS" href="{% url 'sneakers-event' "ADID" %}">ADIDAS</a></li>
+        <li><a id="Other"  href="{% url 'sneakers-event' "Othr" %}">Other</a></li>
+    </ul>
+    <div id='info'>
+    <p>This App was developed using the django library and demo swingtime, as well as the css background website <a href="https://www.gradient-animator.com/"> gradient animator</a>, thanks for looking at the app! </p>
+    </div>
+    <button id='button'>App info</button>
+    <script>
+        var button = document.getElementById('button');
+        button.onclick =
+            function () {
+
+
+                var div = document.getElementById('info');
+                if (div.style.display !== 'block') {
+                    div.style.display = 'block';
+                }
+                else {
+                    div.style.display = 'none';
+                }
+            }
+    </script>
+
+</div>
+{% endblock main_content %}
